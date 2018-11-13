@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <!-- Animator Page -->
+        <title>Animator API</title>
+
+        <script type="text/javascript" src="{{url_for('static', filename='d3.min.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='animator.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='jquery-3.3.1.min.js')}}"></script>
+    </head>
+   <body>
+      
+
+
+        <div id="streamData"></div>
+
+        <script>
+            $("#search_form_input").keyup(function(){
+                var text = $(this).val();
+            
+                $.ajax({
+                    url: "/streamIO",
+                    type: "get",
+                    data: {jsdata: text},
+                    success: function(response) {
+                    $("#streamData").html(response);
+                    },
+                    error: function(xhr) {
+                    //Do Something to handle error
+                    }
+                });
+            });
+        </script>
+
+
+
+
+        <div>
+            <form class="form-horizontal well">
+            <legend>
+                <h3>
+                <div id="title">Animator API</div>
+                </h3>
+            </legend>
+            <fieldset>
+                <label for="csvFileInput"> <strong>CSV File:</strong>
+                </label>
+                <input type="file" id="csvFileInput" onchange="handleFiles(this.files)"
+                accept=".csv">
+                </div>
+            </fieldset>
+            </form>
+            <div id="output">
+            </div>
+        </div>
+        <br>
+        <br>
+
+
+      <!-- EOF Script Inclusions   -->
+      
+   </body>
+</html>

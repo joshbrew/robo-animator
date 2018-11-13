@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>WebSocket demo</title>
+    </head>
+    <body>
+        <script>
+            function streamIO () { 
+                var HOST = '127.0.0.1',
+                    PORT = '5678'
+                var ws = new WebSocket("ws://"+HOST+":"+PORT+"/");
+                    setTimeout(function () {
+                        if (ws.readyState != 1) {
+                            document.body.innerHTML = "No connection at port " + PORT + ", trying again every 3 seconds..."
+                            streamIO();
+                        }
+                        else {
+                            document.body.innerHTML = ""
+                            messages = document.createElement('ul');
+                            ws.onmessage = function (event) {
+                                var messages = document.getElementsByTagName('ul')[0],
+                                    message = document.createElement('li'),
+                                    content = document.createTextNode(event.data);
+                                message.appendChild(content);
+                                messages.appendChild(message);
+                            };
+                            document.body.appendChild(messages);
+                            ws.onclose = function(event) {
+                                var messages = document.getElementsByTagName('ul')[0],
+                                    message = document.createElement('li'),
+                                    content = document.createTextNode("Connection closed, refresh page to get new connection.");
+                                message.appendChild(content);
+                                messages.appendChild(message);
+                                document.body.appendChild(messages);
+                                ws.close();
+                            };
+                        }
+                    }, 3000);
+            }
+            streamIO();
+        </script>
+    </body>
+</html>

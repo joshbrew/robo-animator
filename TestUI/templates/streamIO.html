@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>WebSocket demo</title>
+        <script type="text/javascript" src="{{url_for('static', filename='plotly-latest.min.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='jquery-3.3.1.min.js')}}"></script>
+    </head>
+    <body>
+    <script>
+        var arrx = [], 
+            arry = [], 
+            arrz = [], 
+            arri = [];
+        var current = '';
+        function streamIO () { 
+            var HOST = '127.0.0.1',
+                PORT = '5678'
+            var ws = new WebSocket("ws://"+HOST+":"+PORT+"/");
+            setTimeout(function () {
+                if (ws.readyState != 1) {
+                    document.body.innerHTML = "No connection at port " + PORT + ", trying again every second..."
+                    streamIO();
+                }
+                else {
+                    document.body.innerHTML = "<div id='graph' style='width: 400px; height: 400px;'>"
+                    messages = document.createElement('ul')
+                    document.body.appendChild(messages); 
+                    ws.onopen = function()
+                    {
+                        // Web Socket is connected, send data using send()
+                        ws.send("Message to send");;
+                    };
+                        
+                    ws.onmessage = function(evt) 
+                    { 
+                        var received_msg = evt.data,
+                            data = JSON.parse(evt.data);
+                        arrx.push(data.x);
+                        arry.push(data.y);
+                        arrz.push(data.z);
+                        arri.push(data.i);
+                        current = data;
+                        var my_plot = {
+                            x: arri, 
+                            y: arry,
+                            type: 'scatter',
+                        };
+                        Plotly.newPlot('graph', [my_plot]);
+
+                        ;
+                        var messages = document.getElementsByTagName('ul')[0],
+                                message = document.createElement('li'),
+                                content = document.createTextNode(evt.data);
+                            message.appendChild(content);
+                            messages.appendChild(message);
+                    };
+                        
+                    ws.onclose = function()
+                    { 
+                        var messages = document.getElementsByTagName('ul')[0],
+                                message = document.createElement('li'),
+                                content = document.createTextNode("Connection closed, refresh page to get new connection.");
+                            message.appendChild(content);
+                            messages.appendChild(message);
+                            document.body.appendChild(messages);
+                            ws.close();
+                    };
+                }
+            }, 1000);
+        }
+        streamIO();
+    </script>
+    
+            
+    </body>
+</html>

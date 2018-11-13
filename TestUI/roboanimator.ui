@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RoboAnimator</class>
+ <widget class="QMainWindow" name="RoboAnimator">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1610</width>
+    <height>891</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RoboAnimator</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget_2">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Triangular</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="anims">
+       <attribute name="title">
+        <string>Animation</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="animLayout"/>
+      </widget>
+      <widget class="QWidget" name="motors">
+       <attribute name="title">
+        <string>Robot IO</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="motorLayout"/>
+      </widget>
+      <widget class="QWidget" name="accs">
+       <attribute name="title">
+        <string>Sounds</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="accessoriesLayout">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="out">
+       <attribute name="title">
+        <string>Output</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="outputLayout"/>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="minimumSize">
+       <size>
+        <width>335</width>
+        <height>754</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>335</width>
+        <height>754</height>
+       </size>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>333</width>
+         <height>752</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1610</width>
+     <height>47</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionImport_Animation"/>
+    <addaction name="actionConnect_Port"/>
+    <addaction name="actionImportAnimationData"/>
+    <addaction name="actionWriteData"/>
+    <addaction name="actionImport_Robot_Data"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionEdit_Animation"/>
+    <addaction name="actionRevert"/>
+   </widget>
+   <widget class="QMenu" name="menuRun">
+    <property name="title">
+     <string>Run</string>
+    </property>
+    <addaction name="actionTest_Run"/>
+   </widget>
+   <widget class="QMenu" name="menuDebug">
+    <property name="title">
+     <string>Debug</string>
+    </property>
+    <addaction name="actionsetBlenderPath"/>
+    <addaction name="actionsetPiPath"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuRun"/>
+   <addaction name="menuDebug"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionImport_Animation">
+   <property name="text">
+    <string>Import Animation</string>
+   </property>
+  </action>
+  <action name="actionConnect_Port">
+   <property name="text">
+    <string>Connect Port</string>
+   </property>
+  </action>
+  <action name="actionImportAnimationData">
+   <property name="text">
+    <string>Import Animation Data</string>
+   </property>
+  </action>
+  <action name="actionWriteData">
+   <property name="text">
+    <string>Write Data</string>
+   </property>
+  </action>
+  <action name="actionTest_Run">
+   <property name="text">
+    <string>Test Run</string>
+   </property>
+  </action>
+  <action name="actionRevert">
+   <property name="text">
+    <string>Revert</string>
+   </property>
+  </action>
+  <action name="actionEdit_Animation">
+   <property name="text">
+    <string>Edit Animation</string>
+   </property>
+  </action>
+  <action name="actionImport_Animation_2">
+   <property name="text">
+    <string>Import Animation</string>
+   </property>
+  </action>
+  <action name="actionsetAppPath">
+   <property name="text">
+    <string>setAppPath</string>
+   </property>
+  </action>
+  <action name="actionsetBlenderPath">
+   <property name="text">
+    <string>setBlenderPath</string>
+   </property>
+  </action>
+  <action name="actionImport_Robot_Data">
+   <property name="text">
+    <string>Import Robot Data</string>
+   </property>
+  </action>
+  <action name="actionsetPiPath">
+   <property name="text">
+    <string>setPiAddress</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
