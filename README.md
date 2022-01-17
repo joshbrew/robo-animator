@@ -1,9 +1,9 @@
 # Robo-Animator
-Test UI
+Test UI for animating servos directly from Blender animations (old project, but probably salvagable)
 
 
 HOW TO USE
-- With PyQt5 on the machine running the app and Flask on the Pi installed.
+- With PyQt5 and Blender on the machine running the app, and Flask on the Pi installed.
 
 - Run Testrun_server.py on the Pi
 - Run roboanimator.py on the client machine
