@@ -3,7 +3,7 @@ Test UI for animating servos directly from Blender animations (old project, but 
 
 
 HOW TO USE
-- Install Blender, make a simple animation with bones
+- Install Blender, make a simple keyframe animation with bones
 - With PyQt5 on the computer running the app, and Flask on the Pi installed.
 
 - Run Testrun_server.py on the Pi
