@@ -5,7 +5,7 @@ You could probably build the whole thing on the Pi itself now come to think of i
 The other part of this project that never saw the light of day was integrating klipper support and sensor support to experiment with stabilizing higher quality 3D prints out of the software as well. Don't ask...
 
 
-HOW TO USE
+#### HOW TO USE
 - Install Blender, make a simple keyframe animation with bones
 - Run Testrun_server.py on the Pi
 - Run roboanimator.py on the client machine
@@ -34,23 +34,8 @@ setBlenderPath - set paths to blender.exe or bforartists.exe
 setPiAddress - set host path to raspberry pi server. 
 View animation data sent to local server at http://host:port/animate
 
-TODO
 
-- Wrap app as .exe (Windows), .dmg (Mac), and .elf (Linux), using pyinstaller lib.
-    (also optional compatibility with FreeBSD, Solaris and AIX)
-- Controller support for L6470 ST IC
-- Basic 3D Printer integration, just repurpose the code on line 725 of roboanimator.py with
-another button
-- More error catching
-- More menu options
-- Add undo/redo, other editing features to make system more robust.
-- Style style style
-- Fix file select for non .blend files so you don't have to manually import
-- Detach the blender process correctly for concurrent running. 
-- Add table templates/buttons
-
-
-PYQT5 INSTALLATION (temp for build)
+#### PYQT5 INSTALLATION (temp for build)
  
 - Install Anaconda Navigator
 
@@ -77,3 +62,20 @@ Alright and from there, as long as everything's installed correctly,
 - run the `roboanimator.py` file with spyder and the interface should show up. 
 
 There is a debug command to link blender. Or you can set it yourself in the init file.
+
+
+#### TODO
+
+- Wrap app as .exe (Windows), .dmg (Mac), and .elf (Linux), using pyinstaller lib.
+    (also optional compatibility with FreeBSD, Solaris and AIX)
+- Controller support for L6470 ST IC
+- Basic 3D Printer integration, just repurpose the code on line 725 of roboanimator.py with
+another button
+- More error catching
+- More menu options
+- Add undo/redo, other editing features to make system more robust.
+- Style style style
+- Fix file select for non .blend files so you don't have to manually import
+- Detach the blender process correctly for concurrent running. 
+- Add table templates/buttons
+
