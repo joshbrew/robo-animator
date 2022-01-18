@@ -1,11 +1,10 @@
 # Robo-Animator
-Test UI for animating servos directly from Blender animations (old project, but probably salvageable)
+Test UI for animating servos on a Raspberry Pi directly from Blender animations (old project, but probably salvageable) through a socket server. 
+You could probably build the whole thing on the Pi itself now come to think of it, this project was to explore the idea of automating 3d modeling and animation, and was going to be expanded to include outputs for the 3D models to a 3d printer slicer so the modeling and animation could all be done at the same time from Blender. This was built with Blender 2.7 and Python3 and could output single axis movements of your choice from an armature to a servo. We did have it working roughly, the RPi integration was a one-off test however and needs support for steppers etc. Pretty cool, right?
 
 
 HOW TO USE
 - Install Blender, make a simple keyframe animation with bones
-- With PyQt5 on the computer running the app, and Flask on the Pi installed.
-
 - Run Testrun_server.py on the Pi
 - Run roboanimator.py on the client machine
 
@@ -49,8 +48,8 @@ another button
 - Add table templates/buttons
 
 
-EASY INSTALLATION (temp for build)
-
+PYQT5 INSTALLATION (temp for build)
+ 
 - Install Anaconda Navigator
 
 Once you have Anaconda installed:
@@ -60,24 +59,19 @@ Once you have Anaconda installed:
 
 - from the Terminal type in
 
-
-pip install PyQt5
-
+`pip install PyQt5`
 
 (optional for visual editor) 
 After this completes type in
 
-
-pip install pyqt5-tools
-
+`pip install pyqt5-tools`
 
 - Yes the case of those letters for the terminal commands are specific
-
 
 - Once those are done navigate to C://Users/YOURUSERNAME/Anaconda3/Lib/site-packages/pyqt5-tools and open QtDesigner.
 
 Alright and from there, as long as everything's installed correctly, 
 
-- run the roboanimator.py file with spyder and the interface should show up. 
+- run the `roboanimator.py` file with spyder and the interface should show up. 
 
 There is a debug command to link blender. Or you can set it yourself in the init file.
