@@ -1,5 +1,5 @@
 # Robo-Animator
-Test UI for animating servos directly from Blender animations (old project, but probably salvagable)
+Test UI for animating servos directly from Blender animations (old project, but probably salvageable)
 
 
 HOW TO USE
@@ -12,7 +12,7 @@ HOW TO USE
 Buttons
 - Edit & Import Animation opens blender with a selected .blend file, or none at all for a
 blank animation. When you close this instance of blender, the app unfreezes and imports any
-armiture data available in that animation.
+armature data available in that animation.
 - Import animation imports data without opening blender
 
 - Write Animation Config writes a Json file for the associated data and added flags
