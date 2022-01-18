@@ -1,6 +1,6 @@
 # Robo-Animator
 Test UI for animating servos on a Raspberry Pi directly from Blender animations (old project, but probably salvageable) through a socket server. 
-You could probably build the whole thing on the Pi itself now come to think of it, this project was to explore the idea of automating 3d modeling and animation, and was going to be expanded to include outputs for the 3D models to a 3d printer slicer so the modeling and animation could all be done at the same time from Blender. This was built with Blender 2.7 and Python3 and could output single axis movements of your choice from an armature to a servo. We did have it working roughly, the RPi integration was a one-off test however and needs support for steppers etc. Pretty cool, right?
+You could probably build the whole thing on the Pi itself now come to think of it. This project was to explore the idea of automating 3d modeling and animation, and was going to be expanded to include outputs for the 3D models to a 3d printer slicer so the modeling and animation could all be done at the same time from Blender. This was built with Blender 2.7 and Python3 and could output single axis movements of your choice from an armature to a servo. We did have it working roughly, the RPi integration was a one-off test however and needs support for steppers etc. Pretty cool, right?
 
 
 HOW TO USE
